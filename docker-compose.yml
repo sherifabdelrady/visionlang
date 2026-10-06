@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  visionlang:
+    build: .
+    container_name: visionlang-api
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_NAME=ViT-L-14
+      - PRETRAINED=openai
+      - DEVICE=cpu            # change to 'cuda' for GPU
+    volumes:
+      - ./index:/app/index    # FAISS index persistence
+      - ./images:/app/images  # optional: mount image directory to index
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    command: ["python", "search.py", "--port", "8000"]
