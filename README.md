@@ -1,5 +1,9 @@
 # VisionLang — Multimodal Visual Search
 
+[![CI](https://github.com/sherifabdelrady/visionlang/actions/workflows/ci.yml/badge.svg)](https://github.com/sherifabdelrady/visionlang/actions) ![License](https://img.shields.io/badge/license-MIT-green) ![Python](https://img.shields.io/badge/python-3.10%2B-blue) ![metric](https://img.shields.io/badge/metric-Recall@5%2092.4%-blueviolet)
+
+
+
 > CLIP-powered cross-modal retrieval · Recall@5 92.4% · 3ms p99 @ 1M images
 
 ## Overview
